@@ -24,9 +24,9 @@ export const WELCOME = {
 
 export const STOPS = [
   {
-    name: "Tijgerstraat 89",
-    lat: 51.8280866,
-    lng: 5.8431979,
+    name: "Speeltuin Neptunusstraat",
+    lat: 51.838815,
+    lng: 5.832522,
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
@@ -56,9 +56,9 @@ export const STOPS = [
     completeMessage: "Dit was de Tijgerstraat! \n\nOp juiste volgorde: Maffiafeest (2006), Carnaval Escharen (2008), Efteling (2009), Kunstnacht (2014), Weekendje (2019), Verjaardag Ingrid (2020), Vrijgezellenweekendje (2021), Weekendje (2025).\n\nHierbij een heel oude foto van 2 katten als beloning.\nOp naar de volgende stop.",
   },
   {
-    name: "Café Hop en Heivuur",
-    lat: 51.8154819,
-    lng: 5.851123,
+    name: "neptunnus2.0",
+    lat: 51.839354,
+    lng: 5.831450,
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
