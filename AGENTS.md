@@ -58,7 +58,7 @@ De service worker (`vite-plugin-pwa` + Workbox) cached alle assets na het eerste
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/deploy.yml`) bouwt en deployt automatisch bij een push naar `main`. Vite gebruikt `base: '/nimmaendingstory/'` alleen in de GitHub Actions-omgeving (`GITHUB_ACTIONS=true`), lokaal is de base `/`.
+GitHub Actions (`.github/workflows/deploy.yml`) bouwt en deployt automatisch bij een push naar `main`. Vite gebruikt `base: '/zgapuzzeltocht2026/'` alleen in de GitHub Actions-omgeving (`GITHUB_ACTIONS=true`), lokaal is de base `/`.
 
 ## Voor elke commit
 
