@@ -4,7 +4,7 @@
 
 export const DEBUG_MODE = false;
 
-export const PIN = "2006";
+export const PIN = "7334";
 export const DEBUG_PIN = "9000";
 
 export const WELCOME = {
