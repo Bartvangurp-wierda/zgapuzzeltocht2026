@@ -8,7 +8,7 @@ export const PIN = "2006";
 export const DEBUG_PIN = "9000";
 
 export const WELCOME = {
-  title: "The Nimma Ending Story!",
+  title: "Bert Vuik sportdag puzzeltocht 2026",
   message:
     "Beste deelnemers,\n\nJullie quest voert jullie langs niet-exotische locaties, waar jullie zonder gevaar voor eigen leven onbelangrijke opdrachten dienen te vervullen. Volg het kompas om de eerste locatie te vinden.\n\n"
     + "BELANGRIJK:\n"
