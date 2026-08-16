@@ -19,7 +19,7 @@ export const WELCOME = {
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
     + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
     + "Veel plezier en succes!",
-  photo: null, // Zet hier het pad naar een foto, bijv. "/photo.jpg"
+  photo: "/Logo zga/ZGA logo.png",
 };
 
 export const STOPS = [
