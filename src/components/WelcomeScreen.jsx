@@ -27,7 +27,7 @@ export default function WelcomeScreen({ onStart }) {
       </div> */}
 
       <button className="btn-primary" onClick={onStart}>
-        Start het avontuur →
+        Start de Puzzeltocht →
       </button>
     </div>
   );
