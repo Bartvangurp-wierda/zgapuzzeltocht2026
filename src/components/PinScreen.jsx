@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PIN, DEBUG_PIN } from "../config/trail";
+import { PIN, DEBUG_PIN, WELCOME } from "../config/trail";
 
 export default function PinScreen({ onSuccess }) {
   const [input, setInput] = useState("");
@@ -38,7 +38,7 @@ export default function PinScreen({ onSuccess }) {
     <div className="screen pin-screen">
       <div className="pin-header">
         <div className="compass-icon">🗝️</div>
-        <h1>Nimma Ending Story</h1>
+        <h1>{WELCOME.title}</h1>
         <p>Voer de PIN-code in: Ga terug naar jullie begin</p>
       </div>
 
