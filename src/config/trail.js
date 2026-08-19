@@ -24,36 +24,36 @@ export const WELCOME = {
 
 export const STOPS = [
   {
-    name: "Speeltuin Neptunusstraat",
-    lat: 51.838815,
-    lng: 5.832522,
+    name: "Dierenweide Randerode",
+    lat: 52.179301,
+    lng: 5.947387,
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
-    arrivalMessage: "De tijd vliegt!\n\nDeze Vos verliest noch zn haren, noch zn streken. En ook Ingrid ziet er niet 20 jaar ouder uit. Dat kan de eerste opdracht wel eens wat lastiger maken...\n\n"
-      + "Zet de foto's in de juiste volgorde. Begin met de oudste foto en eindig met de meest recente.\n"
+    arrivalMessage: "Dierenweide Randerode!\n\nDe dierenweide van Randerode wie kent het niet. Jullie zijn daar nu niet maar hier gaat wel de vraag over. De ezels en geiten hebben ondertussen ook al een nieuw onderkomen gevonden vanwege de nieuwbouw plannen. maar de volgende vraag gaat hier wel over. \n\n"
+      + "Zet de foto's in de juiste volgorde. Begin met het grootste dier en eindig met de kleinste.\n"
       + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
       + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
       + "Komen jullie er niet uit?\n"
-      + "Onder 'Hint tonen' staat op willekeurige volgorde bij welke gelegenheden de foto's zijn genomen\n",
+      + "Onder 'Hint tonen' staat op willekeurige volgorde Hoeveel een dier gemiddeld weegt. Dit gaat natuurlijk wel van de punten telling af.\n",
      
     puzzle: {
       type: "photo-order",
       question: "Zet de foto's in de juiste chronologische volgorde van oudste naar meest recent.\n\n",
       photos: [
-        { label: "A", url: `${import.meta.env.BASE_URL}tijdvliegt/A.jpg` },
-        { label: "B", url: `${import.meta.env.BASE_URL}tijdvliegt/B.jpg` },
-        { label: "C", url: `${import.meta.env.BASE_URL}tijdvliegt/C.jpg` },
-        { label: "D", url: `${import.meta.env.BASE_URL}tijdvliegt/D.jpg` },
-        { label: "E", url: `${import.meta.env.BASE_URL}tijdvliegt/E.jpg` },
-        { label: "F", url: `${import.meta.env.BASE_URL}tijdvliegt/F.jpg` },
-        { label: "G", url: `${import.meta.env.BASE_URL}tijdvliegt/G.jpg` },
-        { label: "H", url: `${import.meta.env.BASE_URL}tijdvliegt/H.jpg` },
+        { label: "A", url: `${import.meta.env.BASE_URL}Dierenweide/A.jpg` },
+        { label: "B", url: `${import.meta.env.BASE_URL}Dierenweide/B.jpg` },
+        { label: "C", url: `${import.meta.env.BASE_URL}Dierenweide/C.jpg` },
+        { label: "D", url: `${import.meta.env.BASE_URL}Dierenweide/D.jpg` },
+        { label: "E", url: `${import.meta.env.BASE_URL}Dierenweide/E.jpg` },
+        { label: "F", url: `${import.meta.env.BASE_URL}Dierenweide/F.jpg` },
+        { label: "G", url: `${import.meta.env.BASE_URL}Dierenweide/G.jpg` },
+        { label: "H", url: `${import.meta.env.BASE_URL}Dierenweide/H.jpg` },
       ],
-      answer: "GECAFHBD",
-      hints: ["2x Weekendje weg; Carnaval Escharen; Verjaardag Ingrid; Efteling; Vrijgezellenweekend; Kunstnacht; Maffiafeest"],
+      answer: "ADEGFHCB",
+      hints: [" 165kg; 7 milligram; 75kg; 27,5gr; 400gr; 3kg; 2kg; 20gr"],
     },
-    completeMessage: "Dit was de Tijgerstraat! \n\nOp juiste volgorde: Maffiafeest (2006), Carnaval Escharen (2008), Efteling (2009), Kunstnacht (2014), Weekendje (2019), Verjaardag Ingrid (2020), Vrijgezellenweekendje (2021), Weekendje (2025).\n\nHierbij een heel oude foto van 2 katten als beloning.\nOp naar de volgende stop.",
+    completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van 2 katten als beloning.\nOp naar de volgende stop.",
   },
   {
     name: "neptunnus2.0",
