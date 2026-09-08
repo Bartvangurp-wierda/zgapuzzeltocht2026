@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
+export default function PhotoOrderPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const n = puzzle.photos.length;
   const labels = puzzle.photos.map(p => p.label.toUpperCase());
   const [guess, setGuess] = useState(Array(n).fill(null));
@@ -54,6 +54,8 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
     if (correct === n) {
       setSolved(true);
       setTimeout(onSolved, 800);
+    } else {
+      onWrongAttempt();
     }
   }
 

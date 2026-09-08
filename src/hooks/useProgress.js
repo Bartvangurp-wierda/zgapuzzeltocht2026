@@ -2,10 +2,21 @@ import { useState, useCallback } from "react";
 
 const STORAGE_KEY = "llt_progress";
 
+const DEFAULT_PROGRESS = {
+  pinVerified: false,
+  welcomeSeen: false,
+  currentStopIndex: 0,
+  screen: "pin",
+  wrongAttempts: {},
+  score: 0,
+  finished: false,
+  debugMode: false,
+};
+
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+    return raw ? { ...DEFAULT_PROGRESS, ...JSON.parse(raw) } : null;
   } catch {
     return null;
   }
@@ -20,15 +31,7 @@ function saveProgress(data) {
 export function useProgress() {
   const [progress, setProgressState] = useState(() => {
     return (
-      loadProgress() || {
-        pinVerified: false,
-        welcomeSeen: false,
-        currentStopIndex: 0,
-        screen: "pin",
-        wrongAttempts: {},
-        finished: false,
-        debugMode: false,
-      }
+      loadProgress() || { ...DEFAULT_PROGRESS }
     );
   });
 
@@ -42,15 +45,7 @@ export function useProgress() {
 
   const reset = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY);
-    setProgressState({
-      pinVerified: false,
-      welcomeSeen: false,
-      currentStopIndex: 0,
-      screen: "pin",
-      wrongAttempts: {},
-      finished: false,
-      debugMode: false,
-    });
+    setProgressState({ ...DEFAULT_PROGRESS });
   }, []);
 
   return { progress, update, reset };

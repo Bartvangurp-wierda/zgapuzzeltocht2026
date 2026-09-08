@@ -15,7 +15,7 @@ function scoreSelections(selections, questions) {
   return { bulls, cows };
 }
 
-export default function MultiChoicePuzzle({ puzzle, onSolved }) {
+export default function MultiChoicePuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const { questions } = puzzle;
   const [selections, setSelections] = useState(Array(questions.length).fill(null));
   const [history, setHistory] = useState([]);
@@ -35,6 +35,8 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
     if (bulls === questions.length) {
       setSolved(true);
       setTimeout(onSolved, 800);
+    } else {
+      onWrongAttempt();
     }
   }
 

@@ -11,7 +11,7 @@ import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 
 
-export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose, onBack, debugMode }) {
+export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
   const hints = puzzle.hints ?? (puzzle.hint ? [puzzle.hint] : []);
@@ -21,6 +21,9 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
   const [hintsShown, setHintsShown] = useState(0);
   const [showHintOverlay, setShowHintOverlay] = useState(false);
   const [puzzleDone, setPuzzleDone] = useState(false);
+  const reportWrongAttempt = () => {
+    if (!isPreview) onWrongAttempt();
+  };
 
   function handlePuzzleSolved() {
     setPuzzleDone(true);
@@ -38,6 +41,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
       setFeedback("correct");
       setPuzzleDone(true);
     } else {
+      reportWrongAttempt();
       setFeedback("wrong");
       setTimeout(() => setFeedback(null), 1500);
     }
@@ -101,21 +105,21 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
       )}
 
       {puzzle.type === "mastermind" ? (
-        <MastermindPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <MastermindPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "multi" ? (
-        <MultiQuestionPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <MultiQuestionPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "photo-answer" ? (
-        <PhotoAnswerPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <PhotoAnswerPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "photo-quiz" ? (
-        <PhotoQuizPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <PhotoQuizPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "photo-order" ? (
-        <PhotoOrderPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <PhotoOrderPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "photo-authentic" ? (
-        <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "multi-choice" ? (
-        <MultiChoicePuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <MultiChoicePuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "logic-grid" ? (
-        <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+        <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : (
         <>
           <form className="answer-form" onSubmit={handleSubmit}>

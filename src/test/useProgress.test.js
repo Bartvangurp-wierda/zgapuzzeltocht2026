@@ -12,6 +12,7 @@ describe('useProgress', () => {
     expect(result.current.progress.screen).toBe('pin')
     expect(result.current.progress.pinVerified).toBe(false)
     expect(result.current.progress.currentStopIndex).toBe(0)
+    expect(result.current.progress.score).toBe(0)
   })
 
   it('slaat voortgang op in localStorage na update', () => {
@@ -35,6 +36,15 @@ describe('useProgress', () => {
     const { result } = renderHook(() => useProgress())
     expect(result.current.progress.screen).toBe('navigate')
     expect(result.current.progress.currentStopIndex).toBe(1)
+  })
+
+  it('vult score nul aan bij oudere opgeslagen voortgang', () => {
+    localStorage.setItem('llt_progress', JSON.stringify({
+      pinVerified: true,
+      screen: 'navigate',
+    }))
+    const { result } = renderHook(() => useProgress())
+    expect(result.current.progress.score).toBe(0)
   })
 
   it('reset verwijdert localStorage en keert terug naar beginstaat', () => {

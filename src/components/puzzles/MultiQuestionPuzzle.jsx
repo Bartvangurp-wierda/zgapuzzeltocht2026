@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function MultiQuestionPuzzle({ puzzle, onSolved }) {
+export default function MultiQuestionPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const { questions } = puzzle;
   const [inputs, setInputs] = useState(Array(questions.length).fill(""));
   const [results, setResults] = useState(null);
@@ -17,6 +17,8 @@ export default function MultiQuestionPuzzle({ puzzle, onSolved }) {
     if (res.every(Boolean)) {
       setSolved(true);
       setTimeout(onSolved, 800);
+    } else {
+      onWrongAttempt();
     }
   }
 

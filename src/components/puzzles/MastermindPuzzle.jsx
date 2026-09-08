@@ -15,7 +15,7 @@ function scoreGuess(guess, code) {
   return { bulls, cows };
 }
 
-export default function MastermindPuzzle({ puzzle, onSolved }) {
+export default function MastermindPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const { code, options, slots } = puzzle;
   const [guess, setGuess] = useState(Array(slots).fill(null));
   const [activeSlot, setActiveSlot] = useState(0);
@@ -54,6 +54,8 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
     if (bulls === slots) {
       setWon(true);
       setTimeout(onSolved, 1000);
+    } else {
+      onWrongAttempt();
     }
   }
 

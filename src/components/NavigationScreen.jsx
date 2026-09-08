@@ -10,7 +10,7 @@ function shortestPath(from, to) {
   return from + diff;
 }
 
-export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
+export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, debugMode }) {
   const stop = STOPS[stopIndex];
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission, compassAvailable } = useCompass();
@@ -48,6 +48,7 @@ export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
   function handleCheatSubmit(e) {
     e.preventDefault();
     if (cheatInput.trim().toLowerCase() === stop.cheatCode) {
+      onCheatUsed();
       setShowCheat(false);
       onArrived();
     } else {

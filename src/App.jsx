@@ -13,7 +13,7 @@ import ResetButton from "./components/ResetButton";
 import FwButton from "./components/FwButton";
 import TestButton from "./components/TestButton";
 import TestScreen from "./components/TestScreen";
-import { STOPS } from "./config/trail";
+import { SCORE, STOPS } from "./config/trail";
 
 export default function App() {
   useWakeLock();
@@ -39,13 +39,24 @@ export default function App() {
     update({ screen: "puzzle" });
   }, [update]);
 
+  const handleWrongAttempt = useCallback(() => {
+    if (!debugMode) update({ score: progress.score + SCORE.wrongAttempt });
+  }, [update, progress.score, debugMode]);
+
+  const handleCheatUsed = useCallback(() => {
+    if (!debugMode) update({ score: progress.score + SCORE.cheatCode });
+  }, [update, progress.score, debugMode]);
+
   const handleBackToArrival = useCallback(() => {
     update({ screen: "arrival" });
   }, [update]);
 
   const handleSolved = useCallback(() => {
-    update({ screen: "stopComplete" });
-  }, [update]);
+    update({
+      screen: "stopComplete",
+      score: debugMode ? progress.score : progress.score + SCORE.puzzleSolved,
+    });
+  }, [update, progress.score, debugMode]);
 
   const handleNextStop = useCallback(() => {
     const nextIndex = currentStopIndex + 1;
@@ -67,7 +78,7 @@ export default function App() {
   if (screen === "pin") content = <PinScreen onSuccess={handlePinSuccess} />;
   else if (screen === "welcome") content = <WelcomeScreen onStart={handleStart} />;
   else if (screen === "navigate" && validStop)
-    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} debugMode={debugMode} />;
+    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} onCheatUsed={handleCheatUsed} debugMode={debugMode} />;
   else if (screen === "arrival" && validStop)
     content = <ArrivalScreen stopIndex={currentStopIndex} onStart={handleStartPuzzle} />;
   else if (screen === "puzzle" && validStop)
@@ -75,6 +86,7 @@ export default function App() {
       <PuzzleScreen
         stopIndex={currentStopIndex}
         onSolved={handleSolved}
+        onWrongAttempt={handleWrongAttempt}
         onBack={handleBackToArrival}
         debugMode={debugMode}
       />
@@ -88,6 +100,7 @@ export default function App() {
     <PuzzleScreen
       overridePuzzle={previewPuzzle}
       onSolved={() => setPreviewPuzzle(null)}
+      onWrongAttempt={() => {}}
       onClose={() => setPreviewPuzzle(null)}
     />
   ) : content;
@@ -103,6 +116,11 @@ export default function App() {
     <>
       <RefreshButton />
       <ResetButton />
+      {screen !== "pin" && screen !== "welcome" && (
+        <div className="score-display" aria-label={`Score: ${progress.score} punten`}>
+          Score: {progress.score}
+        </div>
+      )}
       {/* <TipsButton /> */}
       {showSkip && validStop && (
         <FwButton onFw={handleArrived} />

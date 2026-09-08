@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function PhotoAnswerPuzzle({ puzzle, onSolved }) {
+export default function PhotoAnswerPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const [rows, setRows] = useState(puzzle.photos.map(() => ({ input: "", status: "idle" })));
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function PhotoAnswerPuzzle({ puzzle, onSolved }) {
       return next;
     });
     if (!correct) {
+      onWrongAttempt();
       setTimeout(() => {
         setRows(prev => {
           const next = [...prev];

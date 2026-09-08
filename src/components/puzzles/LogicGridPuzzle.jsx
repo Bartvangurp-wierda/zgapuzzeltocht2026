@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function LogicGridPuzzle({ puzzle, onSolved }) {
+export default function LogicGridPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const { clues, columns, rowGroups, answer } = puzzle;
 
   const [cells, setCells] = useState(() =>
@@ -37,6 +37,7 @@ export default function LogicGridPuzzle({ puzzle, onSolved }) {
       setTimeout(onSolved, 800);
     } else {
       setFeedback("wrong");
+      onWrongAttempt();
     }
   }
 

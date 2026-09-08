@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PhotoQuizPuzzle({ puzzle, onSolved }) {
+export default function PhotoQuizPuzzle({ puzzle, onSolved, onWrongAttempt }) {
   const { photos } = puzzle;
   const [inputs, setInputs] = useState(Array(photos.length).fill(""));
   const [results, setResults] = useState(null);
@@ -15,6 +15,8 @@ export default function PhotoQuizPuzzle({ puzzle, onSolved }) {
     if (res.every(Boolean)) {
       setSolved(true);
       setTimeout(onSolved, 800);
+    } else {
+      onWrongAttempt();
     }
   }
 

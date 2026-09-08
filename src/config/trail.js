@@ -4,6 +4,12 @@
 
 export const DEBUG_MODE = false;
 
+export const SCORE = {
+  puzzleSolved: 10,
+  wrongAttempt: -1,
+  cheatCode: -5,
+};
+
 export const PIN = "7334";
 export const DEBUG_PIN = "9000";
 
@@ -39,7 +45,7 @@ export const STOPS = [
      
     puzzle: {
       type: "photo-order",
-      question: "Zet de foto's in de juiste chronologische volgorde van oudste naar meest recent.\n\n",
+      question: "Zet de foto's in de juiste chronologische volgorde van groot naar klein.\\n\n",
       photos: [
         { label: "A", url: `${import.meta.env.BASE_URL}Dierenweide/A.jpg` },
         { label: "B", url: `${import.meta.env.BASE_URL}Dierenweide/B.jpg` },
@@ -62,10 +68,10 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\nHet is ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
+    arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
-      question: "Jullie mogen zo vaak raden als je wilt. De categoriën zijn: 1. Cultuur, 2. Geschiedenis, 3. Wetenschap, 4. Muziek en 5. Thuis. Succes!",
+      question: "Jullie mogen zo vaak raden als je wilt. Succes!",
       questions: [
         {
           question: "Hoe wordt een porseleinen huwelijk ook wel genoemd?",
@@ -88,9 +94,9 @@ export const STOPS = [
           answer: "A",
         },
         {
-          question: "Welke beeldjes kwamen op bezoek?",
-          options: ["2 kleuters, 5 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 3 honden en een theepot", "4 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
-          answer: "E",
+          question: "Waarnaar is porselein vernoemd?",
+          options: ["Een varken", "Een schildpad", "Een vogel", "Een vis", "Een bloem", "Een zeeslak"],
+          answer: "F",
         },
       ],
       hints: [
@@ -101,24 +107,25 @@ export const STOPS = [
     completeMessage: "Dit was Café Hop en Heivuur. Goed gedaan: jullie zijn slimmer dan Hobbes met een cone om haar nek! Op naar de volgende stop.",
   }, 
   {
-    name: "Erasmusplein",
+    name: "Winkel gebied de Voorwaarts",
     lat: 51.819329,
     lng: 5.865646,
     arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
-    arrivalMessage: "De Radboud Universiteit: hier hebben jullie meer dan genoeg tijd doorgebracht. Het heeft wel twee slimmerikken opgeleverd die kritisch nadenken en overal een antwoord op hebben. Weten jullie ook het antwoord te vinden op de volgende vragen?",
+    arrivalMessage: "Winkel gebied de Voorwaarts: Hier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
     puzzle: {
       type: "multi",
-      question: "Tip! Blijf op het Erasmusplein; ga niet niet voorbij Cultuurcafé of de Spar.",
+      question: "Tip! Blijf op het terrein!",
       questions: [
-        { question: "Wat mag alleen hier in?", answers: ["krant"] },
-        { question: "Wat moet je doen?", answers: ["toe doe"] },
-        { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
-        { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
+        { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"] },
+        { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende"] },
+        { question: "Welke volleybal vereniging zit in de Omnisport?", answers: ["Dynamo"] },
+        { question: "Wat kost een sunday caramel bij de Burger King?", answers: ["€2,50"] },
+        { question: "In welk jaar werd het sport en evenementencomplex gesloopt, die hier voorheen stond?", answers: ["2020"] },
       ],
     },
-    completeMessage: "Dit was het Erasmusgebouw! Op naar de volgende stop.",
+    completeMessage: "Dit was winkelgebied de Voorwaarts",
   },
   {
     name: "RSC",
@@ -149,14 +156,14 @@ export const STOPS = [
       type: "photo-quiz",
       question: "Welke film zie je op elke foto?",
       photos: [
-        { url: `${import.meta.env.BASE_URL}filmquiz/1.jpg`, answer: "Lion King" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/2.jpg`, answer: "Terminator" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/1.png`, answer: "Lion King" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/2.png`, answer: "Terminator" },
         { url: `${import.meta.env.BASE_URL}filmquiz/3.jpg`, answer: "Life of Pi" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/4.jpg`, answer: "Godzilla" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/5.jpg`, answer: "E.T." },
-        { url: `${import.meta.env.BASE_URL}filmquiz/6.jpg`, answer: "shining" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/7.jpg`, answer: "Madagascar" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/8.jpg`, answer: "Neverending Story" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/4.png`, answer: "Godzilla" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/5.png`, answer: "E.T." },
+        { url: `${import.meta.env.BASE_URL}filmquiz/6.png`, answer: "Pretty Woman" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/7.png`, answer: "Madagascar" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/8.png`, answer: "Neverending Story" },
       ],
       hints: ["Alladin, Beethoven, Bolt, Catnado, Chicago, Chronicles of Narnia, Creature from the black lagoon, Cube, E.T., Eurovision Song Contest: The story of Fire Saga, Frankenstein, Garfield, George of the jungle, Godzilla, How to train your dragon, Jaws, Jumanji, Jungle Book, Jurassic Park, Life of Pi, Lion King, Madagascar, Men in Black, Monster Inc, Okja, Predator, Psycho, Rango, Shrek, The Goonies, The Hulk, The Matrix, The Never Ending Story, The Shining, The Sound of Music, The Terminator, The Tigger movie, The Wizard of Ozz, They live, Turks Fruit"],
     },
