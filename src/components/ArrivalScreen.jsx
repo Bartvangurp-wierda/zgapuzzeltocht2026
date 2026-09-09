@@ -1,8 +1,9 @@
 import { STOPS } from "../config/trail";
 
-export default function ArrivalScreen({ stopIndex, onStart }) {
+export default function ArrivalScreen({ stopIndex, score, onStart }) {
   const stop = STOPS[stopIndex];
   const message = stop.arrivalMessage ?? "TODO";
+  const isFinal = stop.isFinal;
 
   return (
     <div className="screen arrival-screen">
@@ -13,8 +14,14 @@ export default function ArrivalScreen({ stopIndex, onStart }) {
       <div className="arrival-message">
         <p>{message}</p>
       </div>
+      {isFinal && (
+        <div className="final-score" aria-label={`Eindscore: ${score} punten`}>
+          <span className="final-score-label">Jullie eindscore</span>
+          <strong>{score} punten</strong>
+        </div>
+      )}
       <button className="btn-primary" onClick={onStart}>
-        Start opdracht →
+        {isFinal ? "Bekijk eindbericht →" : "Start opdracht →"}
       </button>
     </div>
   );

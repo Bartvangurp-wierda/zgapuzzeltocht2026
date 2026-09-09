@@ -35,8 +35,9 @@ export default function App() {
   }, [update, currentStopIndex]);
 
   const handleStartPuzzle = useCallback(() => {
-    update({ screen: "puzzle" });
-  }, [update]);
+    const isFinal = STOPS[currentStopIndex]?.isFinal;
+    update({ screen: isFinal ? "final" : "puzzle" });
+  }, [update, currentStopIndex]);
 
   const handleWrongAttempt = useCallback(() => {
     update({ score: progress.score + SCORE.wrongAttempt });
@@ -84,7 +85,7 @@ export default function App() {
   else if (screen === "navigate" && validStop)
     content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} onCheatUsed={handleCheatUsed} onHintUsed={handleHintUsed} debugMode={debugMode} />;
   else if (screen === "arrival" && validStop)
-    content = <ArrivalScreen stopIndex={currentStopIndex} onStart={handleStartPuzzle} />;
+    content = <ArrivalScreen stopIndex={currentStopIndex} score={progress.score} onStart={handleStartPuzzle} />;
   else if (screen === "puzzle" && validStop)
     content = (
       <PuzzleScreen

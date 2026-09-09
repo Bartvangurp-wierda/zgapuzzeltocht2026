@@ -470,6 +470,19 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   white-space: pre-wrap;
   text-align: left;
 }
+.final-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 28px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.final-score-label { color: var(--text-dim); }
+.final-score strong { color: var(--gold-light); font: 700 2rem 'Cinzel', serif; }
 
 /* ── Stop complete screen ───────────────────────────────────── */
 .complete-icon { font-size: 6rem; animation: pop 0.5s cubic-bezier(.36,2,.45,.9) both; }

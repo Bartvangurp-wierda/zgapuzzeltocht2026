@@ -31,7 +31,7 @@ export const WELCOME = {
 
 export const STOPS = [
   {
-    name: "Dierenweide Randerode",
+    name: "Eerste stop!",
     lat: 52.179301,
     lng: 5.947387,
     arrivalRadius: 20,
@@ -63,7 +63,7 @@ export const STOPS = [
     completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van 2 katten als beloning.\nOp naar de volgende stop.",
   },
   {
-    name: "neptunnus2.0",
+    name: "tweede stop",
     lat: 51.839354,
     lng: 5.831450,
     arrivalRadius: 20,
@@ -108,13 +108,13 @@ export const STOPS = [
     completeMessage: "Dit was Café Hop en Heivuur. Goed gedaan: jullie zijn slimmer dan Hobbes met een cone om haar nek! Op naar de volgende stop.",
   }, 
   {
-    name: "Winkel gebied de Voorwaarts",
+    name: "Derde stop",
     lat: 51.819329,
     lng: 5.865646,
     arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
-    arrivalMessage: "Winkel gebied de Voorwaarts: Hier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
+    arrivalMessage: "Winkel gebied de Voorwaarts\n\nHier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
     puzzle: {
       type: "multi",
       question: "Tip! Blijf op het terrein!",
@@ -129,30 +129,13 @@ export const STOPS = [
     completeMessage: "Dit was winkelgebied de Voorwaarts",
   },
   {
-    name: "RSC",
-    lat: 51.8185806,
-    lng: 5.8669618,
-    arrivalRadius: 20,
-    showCat: true,
-    cheatCode: "b9x4",
-    arrivalMessage: "Reis je rot!\n\nVan USA tot India, van Luxemburg tot Japan. Van veilig in een vliegtuig, bus en trein tot ongelukjes in huurauto's: jullie reizen flink wat af.\n\nJullie reis begon bij ANS, maar hoe gaan jullie eindigen?\n\nOpdracht: \n- Jullie gaan zo meteen een reis maken door van plek naar plek te lopen. \n- Alleen verenigingen/organisatie tellen als locatie/plek/plaats. \n- Tussendoor maken jullie 5 tussenstops. \n- Volg de routebeschrijving om de juiste locaties te vinden. \n- Jullie starten bij ANS. \n\nDit zijn de reislocaties van rechts naar links: \nANS, Dance fever, MSV, AIESEC, ESN, SOFV, RAGweek, NSSR, Akku, United Netherlands, FNV, VOX. \nVoorbeeld: vanuit FNV 1 plek naar links is naar Vox. ",
-    puzzle: {
-      type: "text",
-      question: "Routebeschrijving:\n- Start bij ANS. Ga op bezoek bij de man die zijn schoen mist. Loop vervolgens 1 locatie met hem mee. Dit is tussenstop 1.\n- Start bij tussenstop 1. Hoeveel G's zitten er in de volledige naam? Loop dat aantal verenigingen naar rechts. Is het logo blauw? Ga dan 4 verenigingen naar links. Is het groen, ga dan 7 verenigingen naar links. Dit is tussenstop 2.\n- Start bij tussenstop 2. Schuif 5 plaatsen op; Palestina wijst de weg. Loop vervolgens 1 plekje met de mensen mee. Dit is tussenstop 3.\n- Start bij tussenstop 3. Loop 7 plaatsen van de wereld richting de maan. Loop vervolgens het maximum aantal mensen naar rechts. Dit is tussenstop 4.\n- Start bij tussenstop 4. Ga het aantal blokjes op het boomblaadje richting roze streepje horizontaal. Ga vervolgens het aantal letters van de afkorting in de richting van de groene pijl. Dit is tussenstop 5.\n\n" 
-      +"\n\nGeef met 5 letters antwoord op de grote vraag: Hoe eindigt jullie reis?",
-      answer: "Samen",
-      hints: ["Jullie hebben 5 tussenstops gemaakt en het antwoord bestaat uit 5 letters. Toevallig, hè?", "Misschien helpt het om jullie tussenstops een op een rijtje te zetten. Kijk eens of je er dan een woord uit kunt halen. Kijk vooral naar het begin van de woorden."],
-    },
-    completeMessage: "Dit was het RSC! Op naar de volgende stop.",
-  },  
-  {
-    name: "LUX",
+    name: "Vierde stop",
     lat: 51.8451501,
     lng: 5.867057,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
-    arrivalMessage: " We love... The diaper smell of filmquiz!\n\nAan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\nKlik op de foto om te vergroten.\nKom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\nDisclaimer: No babies were harmed in the making of this quiz.",
+    arrivalMessage: " Movie Quiz\n\nAan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\nKlik op de foto om te vergroten.\nKom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\nDisclaimer: No babies were harmed in the making of this quiz.",
     puzzle: {
       type: "photo-quiz",
       question: "Welke film zie je op elke foto?",
@@ -168,10 +151,10 @@ export const STOPS = [
       ],
       hints: ["Alladin, Beethoven, Bolt, Catnado, Chicago, Chronicles of Narnia, Creature from the black lagoon, Cube, E.T., Eurovision Song Contest: The story of Fire Saga, Frankenstein, Garfield, George of the jungle, Godzilla, How to train your dragon, Jaws, Jumanji, Jungle Book, Jurassic Park, Life of Pi, Lion King, Madagascar, Men in Black, Monster Inc, Okja, Predator, Psycho, Rango, Shrek, The Goonies, The Hulk, The Matrix, The Never Ending Story, The Shining, The Sound of Music, The Terminator, The Tigger movie, The Wizard of Ozz, They live, Turks Fruit"],
     },
-    completeMessage: "Dat was LUX! Op naar de volgende stop.",
+    completeMessage: "Dat was de viede stop! Op naar de volgende stop.",
   },
   {
-    name: "Hertogstraat",
+    name: "Vijde stop",
     lat: 51.845777,
     lng: 5.8686818,
     arrivalRadius: 10,
@@ -196,48 +179,13 @@ export const STOPS = [
     completeMessage: "Dat was de Hertogstraat! Op naar de volgende stop.",
   },
   {
-    name: "Valkhof",
+    name: "Zesde stop",
     lat: 51.847563,
     lng: 5.8705543,
     arrivalRadius: 30,
     showCat: true,
     cheatCode: "9mw5",
     arrivalMessage: "Het valkhof is één van de mooiste en oudste plekken van Nijmegen, vol geschiedenis, natuur en natuurlijk de leukste plek tijdens de Feesten!.\n\nMaar hebben jullie wel eens goed rond gekeken? Lees zo eerst de vragen en loop vervolgens een rondje. Jullie hoeven niet het valkhof af en geen trappen naar beneden te nemen.",
-    puzzle: {
-      type: "multi",
-      question: "Beantwoord de vragen. Kijk bij de hint om te zien op welke plekken je moet zoeken.",
-      questions: [
-        {
-          question: "Welke kleur, naast wit, heeft de circusachtige tent van het podium van de Kaaij?",
-          answers: ["blauw"],
-        },
-        {
-          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderden?",
-          answers: ["claudius"],
-        },
-        {
-          question: "Zet de Nijmeegse geschiedenis op volgorde. Vul alleen de cijfers in: 1. Adelaar; 2. Leeuw; 3. Dubbelkoppige adelaar; 4. Drie leeuwen",
-          answers: ["1432"],
-        },
-        {
-          question: "Op welke route vind je een brandende kaars?",
-          answers: ["Liberation route Europe"],
-        },
-        {
-          question: "Zoek de plek waarvan de tekst vrij vertaald is: 'Weet ge mij een plaats te noemen, die op zooveel schoons kan roemen'? Geniet van het uitzicht van de Waal en vertel me: wat is Nijmegen?",
-          answers: ["gastvrij"],
-        },
-      ],
-      hints: [{ image: "valkhof/hint1.jpg" }],
-    },
-    completeMessage: "Dat was het Valkhof! Op naar de volgende stop.",
-  },
-  {
-    name: "Eindlocatie",
-    lat: 51.8376845,
-    lng: 5.8325001,
-    arrivalRadius: 5,
-    arrivalMessage: "De laatste rebus! Los deze op om de tocht af te sluiten.",
     puzzle: {
       type: "rebus",
       question: "Los alle vijf delen op en vul de volledige zin in.",
@@ -257,7 +205,14 @@ export const STOPS = [
       ],
       answer: "MET OPRECHTE AANDACHT MAKEN WIJ ELKE DAG HET VERSCHIL BIJ ZORGGROEP APELDOORN",
     },
-    showCat: true,
+    completeMessage: "Dat was de zesde stop en de laatste opdracht! Ga terug naar de eindlocatie en laat daar het aantal punten zien dat jullie onderweg hebben verzameld.",
+  },
+  {
+    name: "Eindlocatie",
+    lat: 51.8376845,
+    lng: 5.8325001,
+    arrivalRadius: 5,
+    arrivalMessage: "Gefeliciteerd! Jullie hebben de puzzeltocht voltooid.",
     isFinal: true,
   },
 
