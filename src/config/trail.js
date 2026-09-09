@@ -25,7 +25,7 @@ export const WELCOME = {
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
     + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
     + "Veel plezier en succes!",
-  photo: "/logozga/zgalogo.png",
+  photo: "public/logozga/zgalogo.png",
 };
 
 export const STOPS = [
@@ -299,8 +299,26 @@ Veel succes!
     lat: 51.8376845,
     lng: 5.8325001,
     arrivalRadius: 5,
-    hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
-    arrivalMessage: "Niet alleen het kistje ligt bij jullie thuis.\nDe code ligt al die tijd verstopt voor jullie huis.\nErgens verborgen in een geocache.\nDus ga maar snel zoeken en veel succes!",
+    arrivalMessage: "De laatste rebus! Los deze op om de tocht af te sluiten.",
+    puzzle: {
+      type: "rebus",
+      question: "Los alle vijf delen op en vul de volledige zin in.",
+      images: [
+        `${import.meta.env.BASE_URL}cats/1.png`,
+        `${import.meta.env.BASE_URL}cats/2.png`,
+        `${import.meta.env.BASE_URL}cats/3.png`,
+        `${import.meta.env.BASE_URL}cats/4.png`,
+        `${import.meta.env.BASE_URL}cats/5.png`,
+      ],
+      parts: [
+        "MET OPRECHTE AANDACHT",
+        "MAKEN WIJ ELKE DAG",
+        "HET VERSCHIL",
+        "BIJ ZORGGROEP",
+        "APELDOORN",
+      ],
+      answer: "MET OPRECHTE AANDACHT MAKEN WIJ ELKE DAG HET VERSCHIL BIJ ZORGGROEP APELDOORN",
+    },
     showCat: true,
     isFinal: true,
   },

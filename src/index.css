@@ -49,6 +49,31 @@ html { overflow: hidden; }
   box-shadow: var(--shadow);
 }
 
+.rebus-images {
+  display: grid;
+  gap: 16px;
+}
+
+.rebus-item {
+  margin: 0;
+}
+
+.rebus-image {
+  display: block;
+  width: min(100%, 720px);
+  max-height: 55vh;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  border-radius: var(--radius);
+}
+
+.rebus-item figcaption {
+  margin-top: 8px;
+  color: var(--gold-light);
+  font-weight: 700;
+  text-align: center;
+}
+
 body {
   background: var(--bg);
   color: var(--text);

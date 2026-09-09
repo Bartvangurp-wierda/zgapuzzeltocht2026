@@ -9,6 +9,7 @@ import PhotoAuthenticPuzzle from "./puzzles/PhotoAuthenticPuzzle";
 import LogicGridPuzzle from "./puzzles/LogicGridPuzzle";
 import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
+import RebusPuzzle from "./puzzles/RebusPuzzle";
 
 
 export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
@@ -120,6 +121,8 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
         <MultiChoicePuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "logic-grid" ? (
         <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
+      ) : puzzle.type === "rebus" ? (
+        <RebusPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : (
         <>
           <form className="answer-form" onSubmit={handleSubmit}>

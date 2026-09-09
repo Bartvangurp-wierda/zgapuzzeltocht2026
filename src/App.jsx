@@ -31,8 +31,7 @@ export default function App() {
   }, [update]);
 
   const handleArrived = useCallback(() => {
-    const isFinal = STOPS[currentStopIndex]?.isFinal;
-    update({ screen: isFinal ? "final" : "arrival" });
+    update({ screen: "arrival" });
   }, [update, currentStopIndex]);
 
   const handleStartPuzzle = useCallback(() => {
@@ -52,11 +51,12 @@ export default function App() {
   }, [update]);
 
   const handleSolved = useCallback(() => {
+    const isFinal = STOPS[currentStopIndex]?.isFinal;
     update({
-      screen: "stopComplete",
+      screen: isFinal ? "final" : "stopComplete",
       score: debugMode ? progress.score : progress.score + SCORE.puzzleSolved,
     });
-  }, [update, progress.score, debugMode]);
+  }, [update, progress.score, debugMode, currentStopIndex]);
 
   const handleNextStop = useCallback(() => {
     const nextIndex = currentStopIndex + 1;

@@ -141,11 +141,9 @@ export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, de
         </div>
       )}
 
-      {!stop.isFinal && (
-        <button className="cheat-btn" onClick={() => { setShowCheat(true); setCheatInput(""); setCheatError(false); }}>
-          noodcode
-        </button>
-      )}
+      <button className="cheat-btn" onClick={() => { setShowCheat(true); setCheatInput(""); setCheatError(false); }}>
+        noodcode
+      </button>
 
       {debugMode && (
         <div className="debug-badge">{stop.name} · aankomstradius: {stop.arrivalRadius} m</div>
