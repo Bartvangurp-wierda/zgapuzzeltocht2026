@@ -14,13 +14,8 @@ export function useCompass() {
       absoluteConfirmedRef.current = true;
       setCompassAvailable(true);
       setHeading(event.webkitCompassHeading);
-    } else if (event.alpha != null && event.absolute === true) {
-      // Android absolute heading — alpha increases counter-clockwise
-      absoluteConfirmedRef.current = true;
-      setCompassAvailable(true);
-      setHeading((360 - event.alpha) % 360);
-    } else if (event.alpha != null && event.absolute == null) {
-      // Some Android Chrome versions omit the absolute flag despite providing sensor data.
+    } else if (event.alpha != null) {
+      // Android Chrome may report absolute as true, false, or omit it entirely.
       absoluteConfirmedRef.current = true;
       setCompassAvailable(true);
       setHeading((360 - event.alpha) % 360);
