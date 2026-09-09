@@ -32,8 +32,8 @@ export const WELCOME = {
 export const STOPS = [
   {
     name: "Eerste stop!",
-    lat: 52.179301,
-    lng: 5.947387,
+    lat: 52.102581,
+    lng: 6.055958,
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
@@ -63,9 +63,9 @@ export const STOPS = [
     completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van 2 katten als beloning.\nOp naar de volgende stop.",
   },
   {
-    name: "tweede stop",
-    lat: 51.839354,
-    lng: 5.831450,
+    name: "Tweede stop",
+    lat: 52.102113,
+    lng: 6.055814,
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
@@ -109,8 +109,8 @@ export const STOPS = [
   }, 
   {
     name: "Derde stop",
-    lat: 51.819329,
-    lng: 5.865646,
+    lat: 52.101087,
+    lng: 6.055934,
     arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
@@ -130,8 +130,8 @@ export const STOPS = [
   },
   {
     name: "Vierde stop",
-    lat: 51.8451501,
-    lng: 5.867057,
+    lat: 52.102161,
+    lng: 6.056931,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
@@ -155,8 +155,8 @@ export const STOPS = [
   },
   {
     name: "Vijde stop",
-    lat: 51.845777,
-    lng: 5.8686818,
+    lat: 52.102338,
+    lng: 6.057730,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
@@ -180,12 +180,12 @@ export const STOPS = [
   },
   {
     name: "Zesde stop",
-    lat: 51.847563,
-    lng: 5.8705543,
+    lat: 52.102976,
+    lng: 6.056951,
     arrivalRadius: 30,
     showCat: true,
     cheatCode: "9mw5",
-    arrivalMessage: "Het valkhof is één van de mooiste en oudste plekken van Nijmegen, vol geschiedenis, natuur en natuurlijk de leukste plek tijdens de Feesten!.\n\nMaar hebben jullie wel eens goed rond gekeken? Lees zo eerst de vragen en loop vervolgens een rondje. Jullie hoeven niet het valkhof af en geen trappen naar beneden te nemen.",
+    arrivalMessage: "We zijn alweer bij de zesde stop aangekomen en tevens ook de laatste opdracht. Daarna is er geen mogelijkheid meer om punten te verdienen dus doe je best!",
     puzzle: {
       type: "rebus",
       question: "Los alle vijf delen op en vul de volledige zin in.",
@@ -209,8 +209,8 @@ export const STOPS = [
   },
   {
     name: "Eindlocatie",
-    lat: 51.8376845,
-    lng: 5.8325001,
+    lat: 52.103114,
+    lng: 6.055947,
     arrivalRadius: 5,
     arrivalMessage: "Gefeliciteerd! Jullie hebben de puzzeltocht voltooid.",
     isFinal: true,
