@@ -25,7 +25,7 @@ export const WELCOME = {
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
     + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
     + "Veel plezier en succes!",
-  photo: "public/logozga/zgalogo.png",
+  photo: `${import.meta.env.BASE_URL}logozga/zgalogo.png`,
 };
 
 export const STOPS = [
@@ -176,7 +176,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
-    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel DVD's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de imker liet zien, daar moeten jullie nu zijn.\n\nIn de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's is bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAlleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\nAls je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\nSucces!",
+    arrivalMessage: "We gaan eens kijken naar hoe goed jullie de locaties van ZGA kennen.\n\nWe hebben 8 gebouwen van ZGA van Floor gehaald en een aantal van die foto's bewerkt. Geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAls je een fout ziet, dan is het gelijk duidelijk. \n\nSucces!",
     puzzle: {
       type: "photo-authentic",
       question: "Welke foto's zijn origineel en welke zijn bewerkt?\n\nTik op een foto om hem te vergroten.",
