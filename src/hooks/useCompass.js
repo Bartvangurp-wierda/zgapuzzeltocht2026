@@ -14,13 +14,17 @@ export function useCompass() {
       absoluteConfirmedRef.current = true;
       setCompassAvailable(true);
       setHeading(event.webkitCompassHeading);
-    } else if (event.absolute === true && event.alpha != null) {
-      // Android with absolute heading — alpha increases counter-clockwise
+    } else if (event.alpha != null && event.absolute === true) {
+      // Android absolute heading — alpha increases counter-clockwise
+      absoluteConfirmedRef.current = true;
+      setCompassAvailable(true);
+      setHeading((360 - event.alpha) % 360);
+    } else if (event.alpha != null && event.absolute == null) {
+      // Some Android Chrome versions omit the absolute flag despite providing sensor data.
       absoluteConfirmedRef.current = true;
       setCompassAvailable(true);
       setHeading((360 - event.alpha) % 360);
     }
-    // Non-absolute events are ignored to avoid wrong compass direction
   }, []);
 
   const requestPermission = useCallback(async () => {
@@ -51,14 +55,11 @@ export function useCompass() {
       return;
     }
 
-    // Android Chrome 65+: deviceorientationabsolute gives true magnetic north heading.
-    // Fall back to deviceorientation on older browsers.
-    const eventName =
-      "ondeviceorientationabsolute" in window
-        ? "deviceorientationabsolute"
-        : "deviceorientation";
-
-    window.addEventListener(eventName, handleOrientation, true);
+    // Listen to both event names because Android browsers differ in support and flags.
+    const eventNames = ["deviceorientationabsolute", "deviceorientation"];
+    eventNames.forEach((eventName) => {
+      window.addEventListener(eventName, handleOrientation, true);
+    });
 
     // After 3s without absolute data: mark compass as unavailable
     fallbackTimerRef.current = setTimeout(() => {
@@ -68,7 +69,9 @@ export function useCompass() {
     }, 3000);
 
     return () => {
-      window.removeEventListener(eventName, handleOrientation, true);
+      eventNames.forEach((eventName) => {
+        window.removeEventListener(eventName, handleOrientation, true);
+      });
       clearTimeout(fallbackTimerRef.current);
     };
   }, [handleOrientation]);
