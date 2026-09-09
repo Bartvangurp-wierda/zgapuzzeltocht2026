@@ -22,8 +22,8 @@ export default defineConfig({
       base,
       includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg', 'hertogstraat/*.jpg', 'filmquiz/*.jpg', 'tijdvliegt/*.jpg', 'valkhof/*.jpg'],
       manifest: {
-        name: 'Nimma Ending Story',
-        short_name: 'Nimma Ending Story',
+        name: 'Bert Vuik Puzzeltocht 2026',
+        short_name: 'Bert Vuik Puzzeltocht 2026',
         description: 'Een GPS-puzzeltocht',
         theme_color: '#1a1209',
         background_color: '#1a1209',

@@ -8,6 +8,7 @@ export const SCORE = {
   puzzleSolved: 10,
   wrongAttempt: -1,
   cheatCode: -5,
+  hintUsed: -1,
 };
 
 export const PIN = "7334";
@@ -230,69 +231,6 @@ export const STOPS = [
       hints: [{ image: "valkhof/hint1.jpg" }],
     },
     completeMessage: "Dat was het Valkhof! Op naar de volgende stop.",
-  },
-  {
-    name: "Café de Burgemeester",
-    lat: 51.8476145,
-    lng: 5.8648496,
-    arrivalRadius: 10,
-    showCat: true,
-    cheatCode: "k3p7",
-    arrivalMessage: `
-De donderdag is date night! Een mooie traditie.
-
-Eén keer was het zelfs zo gezellig, dat het een date driedaagse werd! Herinneren jullie dat nog?
-Vast niet, want door alle drank zijn jullie bijna alles vergeten...
-
-Een paar dingen weten jullie nog wel:
-- Jullie gingen drie dagen na elkaar uit.
-- Elke dag deden jullie een drankje in een cafe en vervolgens een activiteit op een andere locatie.
-- Het drankje, het cafe en de activiteit op locatie waren elke dag anders.
-
-Maar dit is nog niet genoeg om de alles te kunnen reconstrueren.
-Gelukkig komen er nog meer herinneringen terug nu jullie op locatie zijn.
-
-Tips:
-- Alleen logisch nadenken is niet genoeg. Kijk ook heel goed om jullie heen, om jullie herinneringen te kunnen plaatsen.
-- Bekijk eerst alle aanwijzingen. Het antwoordoverzicht vul je het makkelijkste in door de aanwijzingen op volgorde af te gaan. Maak aantekeningen als je iets vindt wat je lastig in kunt vullen.
-- Onthoud goed waar jullie deze activiteiten deden: 
-   - Dansen bij Dollars
-   -  Karaoke bij Roxy's 
-   -  Spellen bij de Witte Raaf
-
-Wil je dit nog even nalezen als de puzzel is gestart? Klik dan op Instructies.
-
-Veel succes!    
-    `,
-    puzzle: {
-      type: "logic-grid",
-      question: "Gebruik ✓ (groen) voor een match (1x klikken), ✗ (rood) om iets uit te sluiten (2x klikken).",
-      clues: [
-        "Ingrid dronk geen wijn, toen ze zich afvroeg wie J.W. Tilleman was.",
-        "Henk stak ook z'n tong uit, maar zingen deed ie een andere keer.",
-        "Na te veel apekoppen lokten de pijlen jullie naar binnen.",
-        "De wijntjes bij de hoge bi bevallen goed!",
-        "Op de laatste avond bewonderden jullie Keith Haring.",
-        "De cocktailavond kwam voor de spelletjesavond.",
-      ],
-      columns: ["dansen", "karaoke", "spellen"],
-      rowGroups: [
-        { label: "dag",     rows: ["donderdag", "vrijdag", "zaterdag"] },
-        { label: "locatie", rows: ["tikibar", "café de kroeg", "de Burgemeester"] },
-        { label: "drank",   rows: ["wijn", "cocktail", "shotjes"] },
-      ],
-      // answer[groep][rij][kolom]: true = groene cel (match)
-      // donderdag=dansen, vrijdag=spellen, zaterdag=karaoke
-      // tikibar=dansen, café de kroeg=karaoke, de Burgemeester=spellen
-      // wijn=spellen, cocktail=dansen, shotjes=karaoke
-      answer: [
-        [[true,false,false],[false,false,true],[false,true,false]],
-        [[true,false,false],[false,true,false],[false,false,true]],
-        [[false,false,true],[true,false,false],[false,true,false]],
-      ],
-      // hints: ["hint 1", "hint 2"],
-    },
-    completeMessage: "Dat was Café de Burgemeester.\n\nGefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\nOp naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
   },
   {
     name: "Eindlocatie",

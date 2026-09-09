@@ -39,12 +39,16 @@ export default function App() {
   }, [update]);
 
   const handleWrongAttempt = useCallback(() => {
-    if (!debugMode) update({ score: progress.score + SCORE.wrongAttempt });
-  }, [update, progress.score, debugMode]);
+    update({ score: progress.score + SCORE.wrongAttempt });
+  }, [update, progress.score]);
 
   const handleCheatUsed = useCallback(() => {
-    if (!debugMode) update({ score: progress.score + SCORE.cheatCode });
-  }, [update, progress.score, debugMode]);
+    update({ score: progress.score + SCORE.cheatCode });
+  }, [update, progress.score]);
+
+  const handleHintUsed = useCallback(() => {
+    update({ score: progress.score + SCORE.hintUsed });
+  }, [update, progress.score]);
 
   const handleBackToArrival = useCallback(() => {
     update({ screen: "arrival" });
@@ -54,9 +58,9 @@ export default function App() {
     const isFinal = STOPS[currentStopIndex]?.isFinal;
     update({
       screen: isFinal ? "final" : "stopComplete",
-      score: debugMode ? progress.score : progress.score + SCORE.puzzleSolved,
+      score: progress.score + SCORE.puzzleSolved,
     });
-  }, [update, progress.score, debugMode, currentStopIndex]);
+  }, [update, progress.score, currentStopIndex]);
 
   const handleNextStop = useCallback(() => {
     const nextIndex = currentStopIndex + 1;
@@ -78,7 +82,7 @@ export default function App() {
   if (screen === "pin") content = <PinScreen onSuccess={handlePinSuccess} />;
   else if (screen === "welcome") content = <WelcomeScreen onStart={handleStart} />;
   else if (screen === "navigate" && validStop)
-    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} onCheatUsed={handleCheatUsed} debugMode={debugMode} />;
+    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} onCheatUsed={handleCheatUsed} onHintUsed={handleHintUsed} debugMode={debugMode} />;
   else if (screen === "arrival" && validStop)
     content = <ArrivalScreen stopIndex={currentStopIndex} onStart={handleStartPuzzle} />;
   else if (screen === "puzzle" && validStop)
@@ -87,6 +91,7 @@ export default function App() {
         stopIndex={currentStopIndex}
         onSolved={handleSolved}
         onWrongAttempt={handleWrongAttempt}
+        onHintUsed={handleHintUsed}
         onBack={handleBackToArrival}
         debugMode={debugMode}
       />
@@ -101,6 +106,7 @@ export default function App() {
       overridePuzzle={previewPuzzle}
       onSolved={() => setPreviewPuzzle(null)}
       onWrongAttempt={() => {}}
+      onHintUsed={() => {}}
       onClose={() => setPreviewPuzzle(null)}
     />
   ) : content;

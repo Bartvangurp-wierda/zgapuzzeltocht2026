@@ -1,4 +1,4 @@
-# Nimma Ending Story
+# Bert Vuik Puzzeltocht 2026
 
 Een GPS-puzzeltocht PWA gebouwd als cadeau voor een stel dat 20 jaar samen is. Ze worden via een kompas-pijl langs persoonlijke locaties geleid en moeten per stop een raadsel oplossen.
 

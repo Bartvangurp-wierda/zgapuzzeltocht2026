@@ -12,7 +12,7 @@ import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 import RebusPuzzle from "./puzzles/RebusPuzzle";
 
 
-export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
+export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, onHintUsed = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
   const hints = puzzle.hints ?? (puzzle.hint ? [puzzle.hint] : []);
@@ -31,7 +31,10 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
   }
 
   function handleHintOpen() {
-    if (hintsShown === 0) setHintsShown(1);
+    if (hintsShown === 0) {
+      setHintsShown(1);
+      onHintUsed();
+    }
     setShowHintOverlay(true);
   }
 

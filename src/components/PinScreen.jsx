@@ -61,7 +61,7 @@ export default function PinScreen({ onSuccess }) {
 
       <div className="install-hint">
         <p className="install-hint-title">Werkt het beste als app in Chrome</p>
-        <p>Android: tik op <strong>⋮</strong> → <strong>Toevoegen aan startscherm</strong></p>
+        <p>Android: tik op <strong>⋮</strong> <strong>Installeren</strong> → <strong>Snelkoppeling maken</strong> → <strong>Installeren</strong></p>
         <p>iPhone: tik op <strong>deel-icoon</strong> → <strong>Zet op beginscherm</strong></p>
       </div>
     </div>

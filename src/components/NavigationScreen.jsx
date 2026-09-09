@@ -10,7 +10,7 @@ function shortestPath(from, to) {
   return from + diff;
 }
 
-export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, debugMode }) {
+export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, onHintUsed, debugMode }) {
   const stop = STOPS[stopIndex];
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission, compassAvailable } = useCompass();
@@ -107,7 +107,7 @@ export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, de
       )}
 
       {hints.length > 0 && (
-        <button className="btn-hint" onClick={() => { if (hintsShown === 0) setHintsShown(1); setShowHintOverlay(true); }}>
+        <button className="btn-hint" onClick={() => { if (hintsShown === 0) { setHintsShown(1); onHintUsed(); } setShowHintOverlay(true); }}>
           💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
         </button>
       )}
