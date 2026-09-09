@@ -5,9 +5,9 @@
 export const DEBUG_MODE = false;
 
 export const SCORE = {
-  puzzleSolved: 10,
+  puzzleSolved: 20,
   wrongAttempt: -1,
-  cheatCode: -5,
+  cheatCode: -10,
   hintUsed: -1,
 };
 
@@ -46,6 +46,7 @@ export const STOPS = [
      
     puzzle: {
       type: "photo-order",
+      cheatCode: "r2e9",
       question: "Zet de foto's in de juiste chronologische volgorde van groot naar klein.\\n\n",
       photos: [
         { label: "A", url: `${import.meta.env.BASE_URL}Dierenweide/A.jpg` },
@@ -72,6 +73,7 @@ export const STOPS = [
     arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
+      cheatCode: "c5h6",
       question: "Jullie mogen zo vaak raden als je wilt. Succes!",
       questions: [
         {
@@ -105,7 +107,7 @@ export const STOPS = [
         "Dubbele antwoorden mogen"
       ],
     },
-    completeMessage: "Dit was Café Hop en Heivuur. Goed gedaan: jullie zijn slimmer dan Hobbes met een cone om haar nek! Op naar de volgende stop.",
+    completeMessage: "Dit was de tweede stop. Goed gedaan! Op naar de volgende stop.",
   }, 
   {
     name: "Derde stop",
@@ -117,6 +119,7 @@ export const STOPS = [
     arrivalMessage: "Winkel gebied de Voorwaarts\n\nHier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
     puzzle: {
       type: "multi",
+      cheatCode: "8ks4",
       question: "Tip! Blijf op het terrein!",
       questions: [
         { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"] },
@@ -138,6 +141,7 @@ export const STOPS = [
     arrivalMessage: " Movie Quiz\n\nAan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\nKlik op de foto om te vergroten.\nKom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\nDisclaimer: No babies were harmed in the making of this quiz.",
     puzzle: {
       type: "photo-quiz",
+      cheatCode: "p3n7",
       question: "Welke film zie je op elke foto?",
       photos: [
         { url: `${import.meta.env.BASE_URL}filmquiz/1.png`, answer: "Lion King" },
@@ -163,6 +167,7 @@ export const STOPS = [
     arrivalMessage: "We gaan eens kijken naar hoe goed jullie de locaties van ZGA kennen.\n\nWe hebben 8 gebouwen van ZGA van Floor gehaald en een aantal van die foto's bewerkt. Geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAls je een fout ziet, dan is het gelijk duidelijk. \n\nSucces!",
     puzzle: {
       type: "photo-authentic",
+      cheatCode: "6fq2",
       question: "Welke foto's zijn origineel en welke zijn bewerkt?\n\nTik op een foto om hem te vergroten.",
       photos: [
         { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: true },
@@ -188,6 +193,7 @@ export const STOPS = [
     arrivalMessage: "We zijn alweer bij de zesde stop aangekomen en tevens ook de laatste opdracht. Daarna is er geen mogelijkheid meer om punten te verdienen dus doe je best!",
     puzzle: {
       type: "rebus",
+      cheatCode: "9mw5",
       question: "Los alle vijf delen op en vul de volledige zin in.",
       images: [
         `${import.meta.env.BASE_URL}cats/1.png`,

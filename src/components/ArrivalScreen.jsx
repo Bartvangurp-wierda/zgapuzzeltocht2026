@@ -13,6 +13,7 @@ export default function ArrivalScreen({ stopIndex, score, onStart }) {
       <h2 className="arrival-name">{stop.name}</h2>
       <div className="arrival-message">
         <p>{message}</p>
+        {isFinal && <p>Jullie hebben {score} punten verzameld.</p>}
       </div>
       {isFinal && (
         <div className="final-score" aria-label={`Eindscore: ${score} punten`}>

@@ -12,15 +12,20 @@ import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 import RebusPuzzle from "./puzzles/RebusPuzzle";
 
 
-export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, onHintUsed = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
+export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () => {}, onHintUsed = () => {}, onCheatUsed = () => {}, overridePuzzle, onClose, onBack, debugMode }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
+  const stop = isPreview ? null : STOPS[stopIndex];
+  const cheatCode = puzzle.cheatCode ?? stop?.cheatCode;
   const hints = puzzle.hints ?? (puzzle.hint ? [puzzle.hint] : []);
 
   const [input, setInput] = useState("");
   const [feedback, setFeedback] = useState(null);
   const [hintsShown, setHintsShown] = useState(0);
   const [showHintOverlay, setShowHintOverlay] = useState(false);
+  const [showCheatOverlay, setShowCheatOverlay] = useState(false);
+  const [cheatInput, setCheatInput] = useState("");
+  const [cheatError, setCheatError] = useState(false);
   const [puzzleDone, setPuzzleDone] = useState(false);
   const reportWrongAttempt = () => {
     if (!isPreview) onWrongAttempt();
@@ -36,6 +41,18 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
       onHintUsed();
     }
     setShowHintOverlay(true);
+  }
+
+  function handleCheatSubmit(event) {
+    event.preventDefault();
+    if (cheatInput.trim().toLowerCase() === cheatCode.toLowerCase()) {
+      onCheatUsed();
+      setShowCheatOverlay(false);
+      setPuzzleDone(true);
+    } else {
+      setCheatError(true);
+      setCheatInput("");
+    }
   }
 
   function handleSubmit(e) {
@@ -77,6 +94,37 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
         <button className="btn-hint" onClick={handleHintOpen}>
           💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
         </button>
+      )}
+
+      {!isPreview && cheatCode && !puzzleDone && (
+        <button className="cheat-btn" onClick={() => { setShowCheatOverlay(true); setCheatInput(""); setCheatError(false); }}>
+          noodcode
+        </button>
+      )}
+
+      {showCheatOverlay && (
+        <div className="confirm-overlay" onClick={() => setShowCheatOverlay(false)}>
+          <div className="confirm-dialog" onClick={event => event.stopPropagation()}>
+            <p className="hint-overlay-title">Noodcode</p>
+            <p>Vul de noodcode in om deze puzzel over te slaan.</p>
+            <form className="answer-form" onSubmit={handleCheatSubmit}>
+              <input
+                className={`answer-input${cheatError ? " input-wrong" : ""}`}
+                type="text"
+                value={cheatInput}
+                onChange={event => setCheatInput(event.target.value)}
+                placeholder="Noodcode..."
+                autoComplete="off"
+                autoFocus
+              />
+              <button className="btn-primary" type="submit" disabled={!cheatInput.trim()}>
+                Controleer →
+              </button>
+            </form>
+            {cheatError && <p className="wrong-feedback">Verkeerde code. Probeer opnieuw.</p>}
+            <button className="btn-secondary" onClick={() => setShowCheatOverlay(false)}>Sluiten</button>
+          </div>
+        </div>
       )}
 
       {showHintOverlay && (
@@ -125,7 +173,12 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
       ) : puzzle.type === "logic-grid" ? (
         <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
       ) : puzzle.type === "rebus" ? (
-        <RebusPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} onWrongAttempt={reportWrongAttempt} />
+        <RebusPuzzle
+          puzzle={puzzle}
+          onSolved={handlePuzzleSolved}
+          onWrongAttempt={reportWrongAttempt}
+          onReveal={() => onHintUsed(2)}
+        />
       ) : (
         <>
           <form className="answer-form" onSubmit={handleSubmit}>

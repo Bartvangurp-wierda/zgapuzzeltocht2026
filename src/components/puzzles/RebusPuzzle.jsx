@@ -1,9 +1,16 @@
 import { useState } from "react";
 
-export default function RebusPuzzle({ puzzle, onSolved, onWrongAttempt }) {
+export default function RebusPuzzle({ puzzle, onSolved, onWrongAttempt, onReveal }) {
   const [input, setInput] = useState("");
   const [feedback, setFeedback] = useState(null);
   const [solved, setSolved] = useState(false);
+  const [imagesRevealed, setImagesRevealed] = useState(false);
+
+  function handleRevealImages() {
+    if (imagesRevealed) return;
+    setImagesRevealed(true);
+    onReveal();
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -21,16 +28,22 @@ export default function RebusPuzzle({ puzzle, onSolved, onWrongAttempt }) {
 
   return (
     <div className="puzzle-interactive rebus-puzzle">
-      <div className="rebus-images">
-        {puzzle.images.map((image, index) => (
-          <figure className="rebus-item" key={image}>
-            <img src={image} alt={`Deel ${index + 1} van de rebus`} className="rebus-image" />
-            {solved && puzzle.parts?.[index] && (
-              <figcaption>{puzzle.parts[index]}</figcaption>
-            )}
-          </figure>
-        ))}
-      </div>
+      {!imagesRevealed ? (
+        <button className="btn-hint rebus-reveal-btn" type="button" onClick={handleRevealImages}>
+          Rebus bekijken (-2 punten)
+        </button>
+      ) : (
+        <div className="rebus-images">
+          {puzzle.images.map((image, index) => (
+            <figure className="rebus-item" key={image}>
+              <img src={image} alt={`Deel ${index + 1} van de rebus`} className="rebus-image" />
+              {solved && puzzle.parts?.[index] && (
+                <figcaption>{puzzle.parts[index]}</figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      )}
       <form className="answer-form" onSubmit={handleSubmit}>
         <input
           className={`answer-input${feedback === "wrong" ? " input-wrong" : feedback === "correct" ? " input-correct" : ""}`}

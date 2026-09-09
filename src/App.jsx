@@ -47,8 +47,8 @@ export default function App() {
     update({ score: progress.score + SCORE.cheatCode });
   }, [update, progress.score]);
 
-  const handleHintUsed = useCallback(() => {
-    update({ score: progress.score + SCORE.hintUsed });
+  const handleHintUsed = useCallback((penalty = Math.abs(SCORE.hintUsed)) => {
+    update({ score: progress.score - penalty });
   }, [update, progress.score]);
 
   const handleBackToArrival = useCallback(() => {
@@ -93,6 +93,7 @@ export default function App() {
         onSolved={handleSolved}
         onWrongAttempt={handleWrongAttempt}
         onHintUsed={handleHintUsed}
+        onCheatUsed={handleCheatUsed}
         onBack={handleBackToArrival}
         debugMode={debugMode}
       />
@@ -108,6 +109,7 @@ export default function App() {
       onSolved={() => setPreviewPuzzle(null)}
       onWrongAttempt={() => {}}
       onHintUsed={() => {}}
+      onCheatUsed={() => {}}
       onClose={() => setPreviewPuzzle(null)}
     />
   ) : content;
