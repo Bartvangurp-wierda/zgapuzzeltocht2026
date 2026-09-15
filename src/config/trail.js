@@ -7,8 +7,8 @@ export const DEBUG_MODE = false;
 export const SCORE = {
   puzzleSolved: 20,
   wrongAttempt: -1,
-  cheatCode: -10,
-  hintUsed: -1,
+  cheatCode: -15,
+  hintUsed: -2,
 };
 
 export const PIN = "7334";
@@ -25,7 +25,7 @@ export const WELCOME = {
     + "Onder het kompas staat hoe ver de locatie is. De afstand is vanaf het begin nauwkeurig. Wordt de afstand groter, dan lopen jullie de verkeerde kant op.\n"
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
     + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
-    + "Veel plezier en succes!",
+    + "Veel plezier en succes! Maar denk aan je punten want die zijn belangrijk voor de eindscore.\n\n",
   photo: `${import.meta.env.BASE_URL}logozga/zgalogo.png`,
 };
 
@@ -61,7 +61,7 @@ export const STOPS = [
       answer: "ADEGFHCB",
       hints: [" 165kg; 7 milligram; 75kg; 27,5gr; 400gr; 3kg; 2kg; 20gr"],
     },
-    completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van 2 katten als beloning.\nOp naar de volgende stop.",
+    completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van een rebus\nOp naar de volgende stop.",
   },
   {
     name: "Tweede stop",
@@ -74,7 +74,7 @@ export const STOPS = [
     puzzle: {
       type: "multi-choice",
       cheatCode: "c5h6",
-      question: "Jullie mogen zo vaak raden als je wilt. Succes!",
+      question: "Jullie mogen zo vaak raden als je wilt maar na elke controleer poging word er een punt afgetrokken van jullie eindscore. Succes!",
       questions: [
         {
           question: "Hoe wordt een porseleinen huwelijk ook wel genoemd?",
@@ -149,7 +149,7 @@ export const STOPS = [
         { url: `${import.meta.env.BASE_URL}filmquiz/3.jpg`, answer: "Life of Pi" },
         { url: `${import.meta.env.BASE_URL}filmquiz/4.png`, answer: "Godzilla" },
         { url: `${import.meta.env.BASE_URL}filmquiz/5.png`, answer: "E.T." },
-        { url: `${import.meta.env.BASE_URL}filmquiz/6.png`, answer: "Pretty Woman" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/6.jpg`, answer: "Pretty Woman" },
         { url: `${import.meta.env.BASE_URL}filmquiz/7.png`, answer: "Madagascar" },
         { url: `${import.meta.env.BASE_URL}filmquiz/8.png`, answer: "Neverending Story" },
       ],
@@ -181,7 +181,7 @@ export const STOPS = [
       ],
       hints: ["Er zijn 5 foto's bewerkt."],
     },
-    completeMessage: "Dat was de Hertogstraat! Op naar de volgende stop.",
+    completeMessage: "dat was de vijfde stop alweer! Zet hem op naar de volgende stop.",
   },
   {
     name: "Zesde stop",
