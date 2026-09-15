@@ -55,11 +55,11 @@ export default function App() {
     update({ screen: "arrival" });
   }, [update]);
 
-  const handleSolved = useCallback(() => {
+  const handleSolved = useCallback((usedCheat = false) => {
     const isFinal = STOPS[currentStopIndex]?.isFinal;
     update({
       screen: isFinal ? "final" : "stopComplete",
-      score: progress.score + SCORE.puzzleSolved,
+      score: usedCheat ? progress.score : progress.score + SCORE.puzzleSolved,
     });
   }, [update, progress.score, currentStopIndex]);
 
@@ -101,7 +101,7 @@ export default function App() {
   else if (screen === "stopComplete" && validStop)
     content = <StopCompleteScreen stopIndex={currentStopIndex} onNext={handleNextStop} />;
   else if (screen === "final")
-    content = <FinalScreen />;
+    content = <FinalScreen score={progress.score} />;
 
   const mainContent = previewPuzzle ? (
     <PuzzleScreen

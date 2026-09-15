@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { STOPS } from "../config/trail";
 
-export default function FinalScreen() {
+export default function FinalScreen({ score }) {
   const stop = STOPS[STOPS.length - 1];
   const hints = stop.hints ?? [];
   const [hintsShown, setHintsShown] = useState(0);
@@ -19,6 +19,7 @@ export default function FinalScreen() {
         {stop.arrivalMessage.split("\n").map((line, i) =>
           line ? <p key={i}>{line}</p> : <br key={i} />
         )}
+        <p className="final-message-score">Jullie eindscore: {score} punten.</p>
       </div>
 
       {hints.length > 0 && (

@@ -26,6 +26,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
   const [showCheatOverlay, setShowCheatOverlay] = useState(false);
   const [cheatInput, setCheatInput] = useState("");
   const [cheatError, setCheatError] = useState(false);
+  const [usedCheat, setUsedCheat] = useState(false);
   const [puzzleDone, setPuzzleDone] = useState(false);
   const reportWrongAttempt = () => {
     if (!isPreview) onWrongAttempt();
@@ -48,6 +49,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
     if (cheatInput.trim().toLowerCase() === cheatCode.toLowerCase()) {
       onCheatUsed();
       setShowCheatOverlay(false);
+      setUsedCheat(true);
       setPuzzleDone(true);
     } else {
       setCheatError(true);
@@ -106,7 +108,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
         <div className="confirm-overlay" onClick={() => setShowCheatOverlay(false)}>
           <div className="confirm-dialog" onClick={event => event.stopPropagation()}>
             <p className="hint-overlay-title">Noodcode</p>
-            <p>Vul de noodcode in om deze puzzel over te slaan.</p>
+            <p>App of bel het volgende nummer voor de noodcode: 0619908554. Het gebruiken van de noodcode kost 15 punten.</p>
             <form className="answer-form" onSubmit={handleCheatSubmit}>
               <input
                 className={`answer-input${cheatError ? " input-wrong" : ""}`}
@@ -209,7 +211,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, onWrongAttempt = () 
       )}
 
       {puzzleDone && (
-        <button className="btn-primary puzzle-continue-btn" type="button" onClick={onSolved}>
+        <button className="btn-primary puzzle-continue-btn" type="button" onClick={() => onSolved(usedCheat)}>
           Verder →
         </button>
       )}

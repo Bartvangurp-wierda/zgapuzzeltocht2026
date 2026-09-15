@@ -483,6 +483,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 .final-score-label { color: var(--text-dim); }
 .final-score strong { color: var(--gold-light); font: 700 2rem 'Cinzel', serif; }
+.final-message-score { margin-top: 20px; color: var(--gold-light); font-weight: 700; }
 
 /* ── Stop complete screen ───────────────────────────────────── */
 .complete-icon { font-size: 6rem; animation: pop 0.5s cubic-bezier(.36,2,.45,.9) both; }
@@ -562,11 +563,12 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 
 /* ── Cat reward photo ───────────────────────────────────────── */
 .cat-reward {
-  width: min(260px, 70vw);
+  width: min(360px, 86vw);
   aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  border-radius: 12px;
   border: 3px solid var(--gold-dim);
+  background: var(--bg-card);
   margin: 0.5rem auto;
   display: block;
   animation: fadeIn 0.4s ease;

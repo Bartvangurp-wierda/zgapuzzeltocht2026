@@ -153,7 +153,7 @@ export default function NavigationScreen({ stopIndex, onArrived, onCheatUsed, on
         <div className="confirm-overlay" onClick={() => setShowCheat(false)}>
           <div className="confirm-dialog" onClick={e => e.stopPropagation()}>
             <p style={{ fontFamily: "'Cinzel', serif", color: "var(--gold)", fontWeight: 600 }}>Noodcode</p>
-            <p style={{ fontSize: "0.9rem", color: "var(--text-dim)" }}>App Suus & Rachid voor de code van deze stop.</p>
+            <p style={{ fontSize: "0.9rem", color: "var(--text-dim)" }}>App of bel het volgende nummer voor de noodcode: 0619908554. Het gebruiken van de noodcode kost 15 punten.</p>
             <form onSubmit={handleCheatSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <input
                 className={`answer-input${cheatError ? " input-wrong" : ""}`}
