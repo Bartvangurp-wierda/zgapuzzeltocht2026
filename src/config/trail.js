@@ -24,7 +24,7 @@ export const WELCOME = {
     + "Vanaf dat moment hoef je de app niet continu open te hebben om batterij te besparen.\n"
     + "Onder het kompas staat hoe ver de locatie is. De afstand is vanaf het begin nauwkeurig. Wordt de afstand groter, dan lopen jullie de verkeerde kant op.\n"
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
-    + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
+    + "Opent de locatie niet of je komt niet uit de puzzel, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen. Uiteraard gaat dit van je score af\n\n"
     + "Veel plezier en succes! Maar denk aan je punten want die zijn belangrijk voor de eindscore.\n\n",
   photo: `${import.meta.env.BASE_URL}logozga/zgalogo.png`,
 };
@@ -37,31 +37,21 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "r2e9",
-    arrivalMessage: "Dierenweide Randerode!\n\nDe dierenweide van Randerode wie kent het niet. Jullie zijn daar nu niet maar hier gaat wel de vraag over. De ezels en geiten hebben ondertussen ook al een nieuw onderkomen gevonden vanwege de nieuwbouw plannen. maar de volgende vraag gaat hier wel over. \n\n"
-      + "Zet de foto's in de juiste volgorde. Begin met het grootste dier en eindig met de kleinste.\n"
-      + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
-      + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
-      + "Komen jullie er niet uit?\n"
-      + "Onder 'Hint tonen' staat op willekeurige volgorde Hoeveel een dier gemiddeld weegt. Dit gaat natuurlijk wel van de punten telling af.\n",
+    arrivalMessage: "Winkel gebied de Voorwaarts\n\nHier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
      
     puzzle: {
-      type: "photo-order",
+      type: "multi",
       cheatCode: "r2e9",
-      question: "Zet de foto's in de juiste chronologische volgorde van groot naar klein.\\n\n",
-      photos: [
-        { label: "A", url: `${import.meta.env.BASE_URL}Dierenweide/A.jpg` },
-        { label: "B", url: `${import.meta.env.BASE_URL}Dierenweide/B.jpg` },
-        { label: "C", url: `${import.meta.env.BASE_URL}Dierenweide/C.jpg` },
-        { label: "D", url: `${import.meta.env.BASE_URL}Dierenweide/D.jpg` },
-        { label: "E", url: `${import.meta.env.BASE_URL}Dierenweide/E.jpg` },
-        { label: "F", url: `${import.meta.env.BASE_URL}Dierenweide/F.jpg` },
-        { label: "G", url: `${import.meta.env.BASE_URL}Dierenweide/G.jpg` },
-        { label: "H", url: `${import.meta.env.BASE_URL}Dierenweide/H.jpg` },
+      question: "Tip! Blijf op het terrein!",
+      questions: [
+        { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"] },
+        { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende"] },
+        { question: "Welke volleybal vereniging zit in de Omnisport?", answers: ["Dynamo"] },
+        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25"] },
+        { question: "In welk jaar werd het sport en evenementencomplex gesloopt, die hier voorheen stond?", answers: ["2020"] },
       ],
-      answer: "ADEGFHCB",
-      hints: [" 165kg; 7 milligram; 75kg; 27,5gr; 400gr; 3kg; 2kg; 20gr"],
     },
-    completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van een rebus\nOp naar de volgende stop.",
+    completeMessage: "Dit was winkelgebied de Voorwaarts",
   },
   {
     name: "Tweede stop",
@@ -116,20 +106,30 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "8ks4",
-    arrivalMessage: "Winkel gebied de Voorwaarts\n\nHier heeft iedereen uit Apeldoorn wel eens gewinkeld. Weten jullie ook de antwoorden te vinden op de volgende vragen?",
+    arrivalMessage: "Dierenweide Randerode!\n\nDe dierenweide van Randerode wie kent het niet. Jullie zijn daar nu niet maar hier gaat wel de vraag over. De ezels en geiten hebben ondertussen ook al een nieuw onderkomen gevonden vanwege de nieuwbouw plannen. maar de volgende vraag gaat hier wel over. \n\n"
+      + "Zet de foto's in de juiste volgorde. Begin met het grootste dier en eindig met de kleinste.\n"
+      + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
+      + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
+      + "Komen jullie er niet uit?\n"
+      + "Onder 'Hint tonen' staat op willekeurige volgorde Hoeveel een dier gemiddeld weegt. Dit gaat natuurlijk wel van de punten telling af.\n",
     puzzle: {
-      type: "multi",
+      type: "photo-order",
       cheatCode: "8ks4",
-      question: "Tip! Blijf op het terrein!",
-      questions: [
-        { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"] },
-        { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende"] },
-        { question: "Welke volleybal vereniging zit in de Omnisport?", answers: ["Dynamo"] },
-        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25"] },
-        { question: "In welk jaar werd het sport en evenementencomplex gesloopt, die hier voorheen stond?", answers: ["2020"] },
+      question: "Zet de foto's in de juiste chronologische volgorde van groot naar klein.\\n\n",
+      photos: [
+        { label: "A", url: `${import.meta.env.BASE_URL}Dierenweide/A.jpg` },
+        { label: "B", url: `${import.meta.env.BASE_URL}Dierenweide/B.jpg` },
+        { label: "C", url: `${import.meta.env.BASE_URL}Dierenweide/C.jpg` },
+        { label: "D", url: `${import.meta.env.BASE_URL}Dierenweide/D.jpg` },
+        { label: "E", url: `${import.meta.env.BASE_URL}Dierenweide/E.jpg` },
+        { label: "F", url: `${import.meta.env.BASE_URL}Dierenweide/F.jpg` },
+        { label: "G", url: `${import.meta.env.BASE_URL}Dierenweide/G.jpg` },
+        { label: "H", url: `${import.meta.env.BASE_URL}Dierenweide/H.jpg` },
       ],
+      answer: "ADEGFHCB",
+      hints: [" 165kg; 7 milligram; 75kg; 27,5gr; 400gr; 3kg; 2kg; 20gr"],
     },
-    completeMessage: "Dit was winkelgebied de Voorwaarts",
+    completeMessage: "Dit was Dierenweide Randerode! \n\nOp juiste volgorde: Ezel 165kg, Geit 75kg, Konijn 3kg, Kip 2kg, Duif 400gr, Mus 27,5gr, Muis 20gr, Mier 7 milligram.\n\nHierbij een foto van een rebus\nOp naar de volgende stop.",
   },
   {
     name: "Vierde stop",
