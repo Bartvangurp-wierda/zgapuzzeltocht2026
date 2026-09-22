@@ -24,16 +24,16 @@ export const WELCOME = {
     + "Vanaf dat moment hoef je de app niet continu open te hebben om batterij te besparen.\n"
     + "Onder het kompas staat hoe ver de locatie is. De afstand is vanaf het begin nauwkeurig. Wordt de afstand groter, dan lopen jullie de verkeerde kant op.\n"
     + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
-    + "Opent de locatie niet of je komt niet uit de puzzel, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen. Uiteraard gaat dit van je score af\n\n"
-    + "Veel plezier en succes! Maar denk aan je punten want die zijn belangrijk voor de eindscore.\n\n",
+    + "Opent de locatie niet of je komt niet uit de puzzel, dan kunnen jullie bij ons een noodcode opvragen om verder te komen. Uiteraard gaat dit van je score af\n\n"
+    + "Veel plezier en succes!\n\n",
   photo: `${import.meta.env.BASE_URL}logozga/zgalogo.png`,
 };
 
 export const STOPS = [
   {
     name: "Eerste stop!",
-    lat: 52.102581,
-    lng: 6.055958,
+    lat: 52.209131,
+    lng: 5.995918,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "r2e9",
@@ -55,12 +55,12 @@ export const STOPS = [
   },
   {
     name: "Tweede stop",
-    lat: 52.102113,
-    lng: 6.055814,
+    lat: 52.208635,
+    lng: 6.001995,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
+    arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen en punten dat het je kost.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
       cheatCode: "c5h6",
@@ -101,12 +101,12 @@ export const STOPS = [
   }, 
   {
     name: "Derde stop",
-    lat: 52.101087,
-    lng: 6.055934,
+    lat: 52.208247,
+    lng: 6.010202,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "8ks4",
-    arrivalMessage: "Dierenweide Randerode!\n\nDe dierenweide van Randerode wie kent het niet. Jullie zijn daar nu niet maar hier gaat wel de vraag over. De ezels en geiten hebben ondertussen ook al een nieuw onderkomen gevonden vanwege de nieuwbouw plannen. maar de volgende vraag gaat hier wel over. \n\n"
+    arrivalMessage: "Dierenweide Randerode!\n\nDe dierenweide van Randerode wie kent het niet. Jullie zijn daar nu niet maar hier gaat wel de vraag over. De ezels en geiten hebben ondertussen ook al een nieuw onderkomen gevonden vanwege de nieuwbouw plannen.\n\n"
       + "Zet de foto's in de juiste volgorde. Begin met het grootste dier en eindig met de kleinste.\n"
       + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
       + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
@@ -133,8 +133,8 @@ export const STOPS = [
   },
   {
     name: "Vierde stop",
-    lat: 52.102161,
-    lng: 6.056931,
+    lat: 52.204231,
+    lng: 6.007573,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
@@ -159,8 +159,8 @@ export const STOPS = [
   },
   {
     name: "Vijde stop",
-    lat: 52.102338,
-    lng: 6.057730,
+    lat: 52.205277,
+    lng: 6.000791,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
@@ -185,8 +185,8 @@ export const STOPS = [
   },
   {
     name: "Zesde stop",
-    lat: 52.102976,
-    lng: 6.056951,
+    lat: 52.209362,
+    lng: 5.995631,
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "9mw5",
@@ -215,8 +215,8 @@ export const STOPS = [
   },
   {
     name: "Eindlocatie",
-    lat: 52.103114,
-    lng: 6.055947,
+    lat: 52.209828,
+    lng: 5.993025,
     arrivalRadius: 10,
     arrivalMessage: "Gefeliciteerd! Jullie hebben de puzzeltocht voltooid.",
     isFinal: true,
