@@ -190,7 +190,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "9mw5",
-    arrivalMessage: "We zijn alweer bij de zesde stop aangekomen en tevens ook de laatste opdracht. Daarna is er geen mogelijkheid meer om punten te verdienen dus doe je best!",
+    arrivalMessage: "We zijn alweer bij de zesde stop aangekomen en tevens ook de laatste opdracht. Als jullie goed hebben opgelet dan hebben jullie alle rebus plaatjes al opgelost tijdens de tocht en dan kan je het antwoord zo invullen. Zo niet dan moet je de plaatjes openen voor het antwoord. Doe je best!",
     puzzle: {
       type: "rebus",
       cheatCode: "9mw5",
