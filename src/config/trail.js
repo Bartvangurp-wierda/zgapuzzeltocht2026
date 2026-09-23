@@ -44,10 +44,10 @@ export const STOPS = [
       cheatCode: "r2e9",
       question: "Tip! Blijf op het terrein!",
       questions: [
-        { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"] },
-        { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende"] },
+        { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"]  },
+        { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende","16e"] },
         { question: "Welke volleybal vereniging zit in de Omnisport?", answers: ["Dynamo"] },
-        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25"] },
+        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25","twee euro vijf en twintig"] },
         { question: "In welk jaar werd het sport en evenementencomplex gesloopt, die hier voorheen stond?", answers: ["2020"] },
       ],
     },
@@ -60,7 +60,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen en punten dat het je kost.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
+    arrivalMessage: "Beste puzzel wizzards\n\nWe gaan beginnen met de Porseleinen Pubquiz. En het wordt vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen maar ook punten dat je verliest.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
       cheatCode: "c5h6",
@@ -87,7 +87,7 @@ export const STOPS = [
           answer: "A",
         },
         {
-          question: "Waarnaar is porselein vernoemd?",
+          question: "Waar is porselein naar vernoemd?",
           options: ["Een varken", "Een schildpad", "Een vogel", "Een vis", "Een bloem", "Een zeeslak"],
           answer: "F",
         },
