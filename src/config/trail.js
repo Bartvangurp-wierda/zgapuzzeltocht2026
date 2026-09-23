@@ -47,7 +47,7 @@ export const STOPS = [
         { question: "Welke dierenspeciaal zaak komt hier?", answers: ["Pets Place"]  },
         { question: "hoeveelste filiaal van Hornbach zit hier?", answers: ["Zestiende","16e"] },
         { question: "Welke volleybal vereniging zit in de Omnisport?", answers: ["Dynamo"] },
-        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25","twee euro vijf en twintig"] },
+        { question: "Wat kost een King sunday bij de Burger King?", answers: ["€2,25","twee euro vijf en twintig","twee euro vijf en twintig cent","twee vijf en twintig","€ 2,25"] },
         { question: "In welk jaar werd het sport en evenementencomplex gesloopt, die hier voorheen stond?", answers: ["2020"] },
       ],
     },
